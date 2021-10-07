@@ -44,6 +44,7 @@ mounted() {
 <style scoped>
 .demo2 {
   box-sizing: border-box;
+  padding: 4px;
 }
 .input {
   box-sizing: border-box;
@@ -60,6 +61,7 @@ mounted() {
 .container {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 5px;
 }
 .container .item {
   width: 50%;
@@ -70,6 +72,7 @@ mounted() {
   border: 1px solid #C0C4CC;
   box-sizing: border-box;
   padding: 10px 0;
+  margin:0px -1px -1px 0px ;
 }
 .container .item .image {
   width: 50px;
