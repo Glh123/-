@@ -43,6 +43,9 @@ export default {
   },
   mounted() {
     document.title = '任务四'
+    // this.axios.get('../../../static/productList.json').then((res) => {
+    //   console.log(res.data.data)
+    // })
   },
   methods: {
     handleClick (data) {
