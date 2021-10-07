@@ -33,12 +33,12 @@ export default {
       ]
     }
   },
-created() {
+  created() {
 
-},
-mounted() {
-
-}
+  },
+  mounted() {
+    document.title = '任务二'
+  }
 }
 </script>
 <style scoped>
