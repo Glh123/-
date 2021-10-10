@@ -1,13 +1,9 @@
 <template>
   <div class="demo-5">
-    <div class="header">
-      <i class="el-icon-arrow-left"></i>
-      <div class="title">商品列表</div>
-      <i class="el-icon-search"></i>
-    </div>
+    <Header title="商品列表" :icon="headerIcon" />
     <div class="container">
       <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
-        <el-tab-pane v-for="(item,index) in nav" :label="item.label" :name="item.key" :key="index">
+        <el-tab-pane v-for="(item,index) in navs" :label="item.label" :name="item.key" :key="index">
         </el-tab-pane>
       </el-tabs>
       <div class="content" v-if="products.length">
@@ -26,11 +22,18 @@
 
 <script>
 import {getProducts} from '../../api/productList'
+import Header from '../../components/header.vue'
 export default {
+  components:{
+    Header
+  },
   data() {
     return {
+      headerIcon: {
+        icon1: 'el-icon-arrow-left', icon2: 'el-icon-search'
+      },
       activeName: 'all',
-      nav: [
+      navs: [
         {label: '综合', key: 'all'},
         {label: '价格', key: 'price'},
         {label: '新品', key: 'new'}
