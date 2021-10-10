@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Demo2 from '@/view/demo2/index'
 import Demo4 from '@/view/demo4/index'
+import Demo5 from '@/view/demo5/index'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/demo4',
       name: 'demo4',
       component: Demo4
+    },
+    {
+      path: '/demo5',
+      name: 'demo5',
+      component: Demo5
     },
   ]
 })
