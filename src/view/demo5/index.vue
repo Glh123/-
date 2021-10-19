@@ -46,7 +46,6 @@ export default {
   },
   created() {
     document.title = '任务五'
-
   },
   mounted() {
     this.getProducts()
@@ -95,24 +94,12 @@ export default {
   flex: 1;
   text-align: center;
 }
-.demo-5 /deep/ .el-tabs {
-  z-index: 2;
-  background-color: white;
-}
-.demo-5 /deep/ .el-tabs__header  {
-  margin-bottom: 0;
-}
-.demo-5 /deep/ .el-tabs__nav {
-  width: 100%;
-}
+
 .demo-5 /deep/ .el-tabs__nav .el-tabs__item {
   text-align: center;
   width: 33.3333%;
 }
-.container {
-  padding: 4px 2px;
-  background-color: rgb(248, 244, 244);
-}
+
 .container .content {
   min-height: 513px;
   display: flex;
@@ -138,5 +125,19 @@ export default {
   font-size: 14px;
   padding-top: 10px;
   padding-bottom: 15px;
+}
+.container {
+  padding: 4px 2px;
+  background-color: rgb(248, 244, 244);
+}
+.container /deep/ .el-tabs{
+  z-index: 2;
+  background-color: white;
+}
+.container /deep/ .el-tabs__header  {
+  margin-bottom: 0;
+}
+.container /deep/ .el-tabs__nav {
+  width: 100%;
 }
 </style>
