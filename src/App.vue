@@ -18,5 +18,7 @@ export default {
 .container {
   padding: 4px 2px;
   background-color: rgb(248, 244, 244);
+  border: 1px solid transparent;
+  min-height: 600px;
 }
 </style>
