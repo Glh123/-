@@ -34,6 +34,7 @@
 
 <script>
 import Header from '@/components/header'
+import {getRecords} from '@/api/getRecord'
 const records = {
   property: '总资产（元）',
   deposit: '累计充值（元）',
@@ -45,30 +46,36 @@ export default {
   },
   data() {
     return {
-      record:{
-        property: 1000,
-        deposit: 2000,
-        consume: 1000
-      },
-      records: []
+      records: [],
     }
-  },
-  created() {
-
   },
   mounted() {
     this.getRecords()
   },
   methods: {
-    getRecords () {
+    async getRecords () {
+      const data = await getRecords()
       const list = []
-      Object.keys(this.record).forEach((key) => {
-        list.push({name: records[key], money: this.record[key]})
+      Object.keys(data).forEach((key) => {
+        list.push({name: records[key], money: data[key]})
       })
       this.records = [...list]
     },
     handleDeposit (type) {
-      console.log(type)
+      this.openFullScreen2(type)
+    },
+    openFullScreen2(type) {
+      const loading = this.$loading({
+        lock: true,
+        text: '充值中',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.7)'
+      });
+      // 向后端发起充值接口 type 区分是哪种充值
+      setTimeout(() => {
+        loading.close();
+        this.$message.success('充值成功')
+      }, 2000);
     }
   },
 }
