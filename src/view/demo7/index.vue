@@ -62,9 +62,9 @@ export default {
       this.records = [...list]
     },
     handleDeposit (type) {
-      this.openFullScreen2(type)
+      this.openFullScreen(type)
     },
-    openFullScreen2(type) {
+    openFullScreen(type) {
       const loading = this.$loading({
         lock: true,
         text: '充值中',
