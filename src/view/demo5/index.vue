@@ -66,7 +66,7 @@ export default {
       const pageSize = this.pageSize
       const key = this.activeName
       const list = this.products
-      const data = getProducts({pageNum, pageSize, key})
+      const data = getProducts(key,pageNum, pageSize)
       this.visible = Math.ceil(data.length / pageSize) == pageNum ? false : true
       data.data.forEach((item) => {
         list.push({...item})

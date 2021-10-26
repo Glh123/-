@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import url from '@/assets/1.png'
+import url from '@/assets/fruit-1.png'
 export default {
   data() {
     return {

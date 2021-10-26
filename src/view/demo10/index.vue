@@ -46,8 +46,6 @@
           width="380">
         </el-table-column>
          <el-table-column
-          prop="num"
-          sortable
           label="操作">
           <template slot-scope="scope">
             <el-button type="primary" icon="el-icon-edit" size="mini" @click="handleEdit(scope)"/>
