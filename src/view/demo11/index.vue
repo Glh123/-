@@ -56,6 +56,11 @@ export default {
   methods: {
     handleManage () {
       this.isManage = !this.isManage
+      if(!this.isManage) {
+        this.paroductList = [...this.paroductList].map((item) => {
+        return {...item,checked: false}
+      })
+      }
     },
     getProducts () {
       const data = getProducts('fruit')
