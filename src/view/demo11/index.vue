@@ -6,9 +6,9 @@
         <span @click="handleManage">{{!isManage ? '管理' : '取消'}}</span>
       </div>
       <div class="content">
-        <div class="item" v-for="(item, index) in paroductList" :key="index">
+        <div class="item" v-for="(item, index) in paroductList" :key="index" >
           <el-checkbox v-if="isManage" class="select" :value="item.checked" @change="(val) => handleSelect(val, item)" />
-          <el-image class="image" :src="item.url" fit="cover"></el-image>
+          <el-image class="image" :src="item.url" fit="cover" @click.stop="handelGoDetail(item)"></el-image>
           <p class="name">{{item.name}}</p>
           <p class="price">￥ {{item.price}}</p>
         </div>
@@ -54,12 +54,16 @@ export default {
     }
   },
   methods: {
+    handelGoDetail ({id}) {
+      console.log(id)
+      this.$router.push(`demo11/${id}`)
+    },
     handleManage () {
       this.isManage = !this.isManage
       if(!this.isManage) {
         this.paroductList = [...this.paroductList].map((item) => {
-        return {...item,checked: false}
-      })
+          return {...item,checked: false}
+        })
       }
     },
     getProducts () {
@@ -68,7 +72,7 @@ export default {
         return {...item, checked: false}
       })
     },
-    handleSelect (val, row) {
+    handleSelect (val, row, e) {
       const id = row.id
       let list = [...this.paroductList]
       this.paroductList.forEach((item, index, array) => {
