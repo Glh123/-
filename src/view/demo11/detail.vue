@@ -38,7 +38,7 @@
           <span>购物车</span>
         </div>
         <div class="item">
-          <i class="iconfont el-icon-star-on"></i>
+          <el-rate :value="value1" :max='1' @change="handleCollect"></el-rate>
           <span>收藏</span>
         </div>
       </div>
@@ -54,6 +54,7 @@
 export default {
   data() {
     return {
+      value1: 0,
       url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg'
     }
   },
@@ -64,6 +65,13 @@ export default {
 
   },
   methods: {
+    handleCollect (val) {
+      if(val == this.value1) {
+        this.value1 = val - 1
+      } else {
+        this.value1 = val
+      }
+    },
     goBack () {
       this.$router.go(-1)
     }
