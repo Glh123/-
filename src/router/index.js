@@ -8,6 +8,7 @@ import Demo5 from '@/view/demo5/index'
 import Demo6 from '@/view/demo6/index'
 import Demo7 from '@/view/demo7/index'
 import Demo8 from '@/view/demo8/index'
+import Demo9 from '@/view/demo9/index'
 import Demo10 from '@/view/demo10/index'
 import Demo11 from '@/view/demo11/index'
 import Detail from '@/view/demo11/detail'
@@ -55,6 +56,11 @@ export default new Router({
       path: '/demo8',
       name: 'demo8',
       component: Demo8
+    },
+    {
+      path: '/demo9',
+      name: 'demo9',
+      component: Demo9
     },
     {
       path: '/demo10',
