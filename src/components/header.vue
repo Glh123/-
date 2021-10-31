@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="header">
-      <i :class="icon.icon1"></i>
+      <i :class="icon.icon1" @click="handleBack"></i>
       <div class="title">{{title}}</div>
       <i :class="icon.icon2"></i>
     </div>
@@ -31,7 +31,12 @@ export default {
   },
   mounted() {
 
-  }
+  },
+  methods: {
+    handleBack () {
+      this.$router.go(-1)
+    }
+  },
 }
 </script>
 <style scoped>

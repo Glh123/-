@@ -10,7 +10,7 @@
     <div class="logo">
       <img src="../../assets/logo-1.jpg" alt="">
     </div>
-    <div class="container">
+    <div class="containers">
       <div class="item" v-for="item in navs" :key="item.index">
         <img class="image" :src="item.url" alt="">
         <div class="description">{{item.name}}</div>
@@ -58,12 +58,12 @@ export default {
   height: 100%;
 
 }
-.container {
+.containers {
   display: flex;
   flex-wrap: wrap;
   margin-top: 5px;
 }
-.container .item {
+.containers .item {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -74,7 +74,7 @@ export default {
   padding: 10px 0;
   margin:0px -1px -1px 0px ;
 }
-.container .item .image {
+.containers .item .image {
   width: 50px;
   height: 50px;
 }

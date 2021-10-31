@@ -125,6 +125,7 @@ export default {
 <style scoped lang='less'>
 .demo-10 {
   padding: 20px;
+  box-sizing: border-box;
   .content{
     padding-top: 30px;
   }
